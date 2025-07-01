@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1018698001665",
+    "project_id": "burgereat-272a8",
+    "storage_bucket": "burgereat-272a8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018698001665:android:02590cc5858112742eff00",
+        "android_client_info": {
+          "package_name": "com.example.burgerapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIYV_MQsGMFM56z3ay4jHZK_AB9aex3-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

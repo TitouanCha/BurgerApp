@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BurgerDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/product_image_iv"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:contentDescription="todo"
+                android:scaleType="fitXY"
+                android:src="@drawable/burger_5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/product_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/beef_cheese_burger"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="todo"
+                        android:src="@drawable/baseline_star_24"
+                        app:tint="@color/yellow" />
+
+                    <TextView
+                        android:id="@+id/product_rating_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_4_8_reviews_2_2_km"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/product_description_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="casual"
+                        android:lineSpacingExtra="4sp"
+                        android:text="@string/fake_description_text"
+                        android:textColor="@color/grey_600"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/custom_back_button"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/white_on_white"
+            android:text=""
+            app:cornerRadius="10dp"
+            app:icon="@drawable/baseline_arrow_back_24"
+            app:iconGravity="textEnd"
+            app:iconTint="@color/black" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_location_btn"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/white_on_white"
+            android:text=""
+            app:cornerRadius="10dp"
+            app:icon="@drawable/baseline_location_pin_24"
+            app:iconGravity="textEnd"
+            app:iconPadding="0dp"
+            app:iconTint="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white_on_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp">
+
+        <TextView
+            android:id="@+id/product_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_weight="1"
+            android:layout_height="0dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/add_to_cart_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/header_bg"
+            app:cardCornerRadius="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal"
+                android:padding="12dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/icone_card"
+                    android:src="@drawable/baseline_shopping_cart_24"
+                    app:tint="@color/white" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="0dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:text="Ajouter au panier"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</FrameLayout>

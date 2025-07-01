@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">BurgerApp</string>
+    <string name="main_activity_categories_tv">Categories : </string>
+    <string name="main_activity_for_you_tv">#SpecialForYou</string>
+    <string name="burger_image_description">Burger image</string>
+    <string name="food_img_description">burger image\n</string>
+    <string name="rating_icon">grade image</string>
+    <string name="tools_rating_text">4/5</string>
+    <string name="tools_food_price_text">40€</string>
+    <string name="like_icon">favorite image</string>
+    <string name="bottom_navigation_home_title">Home</string>
+    <string name="bottom_navigation_promotion_title">Promotions</string>
+    <string name="bottom_navigation_cart_title">Cart</string>
+    <string name="bottom_navigation_chat_title">Chat</string>
+    <string name="bottom_navigation_history_title">History</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_header_question">Que voulez-vous manger ?</string>
+    <string name="adresse">Adresse de livraison</string>
+    <string name="home_adresse_title_tv">Adresse de livraison</string>
+    <string name="home_adresse">5 rue Jules Ferry, Yerres</string>
+    <string name="price">24€</string>
+    <string name="icone_card">cart icon</string>
+    <string name="beef_cheese_burger">Beef cheese burger</string>
+    <string name="_4_8_reviews_2_2_km">4/5 2.2km</string>
+    <string name="description">Big description</string>
+    <string name="fake_description_text">Facke description</string>
+</resources>
