@@ -1,10 +1,9 @@
-package com.example.burgerapp.Adapter
+package com.example.burgerapp.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.burgerapp.R
 
@@ -22,6 +21,7 @@ class CategoriesAdapter(val categories: List<String>): RecyclerView.Adapter<Cate
         val cat = categories[position]
         holder.categoriesTextView.text = cat
     }
+
 }
 
 class CategoriesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

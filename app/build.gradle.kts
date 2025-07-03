@@ -48,6 +48,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
     // Firebase dependencies
     implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
@@ -62,4 +64,7 @@ dependencies {
     // Firebase Performance
     implementation("com.google.firebase:firebase-perf")
     implementation("com.google.firebase:firebase-perf-ktx")
+
+    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+    implementation("com.squareup.retrofit2:converter-gson")
 }
