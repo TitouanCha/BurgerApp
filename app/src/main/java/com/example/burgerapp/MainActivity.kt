@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.example.burgerapp.fragments.CartFragment
+import com.example.burgerapp.fragments.MapFragment
 import com.example.burgerapp.fragments.ChatFragment
 import com.example.burgerapp.fragments.HistoryFragment
 import com.example.burgerapp.fragments.HomeFragment
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_cart -> {
-                    replaceFragment(CartFragment())
+                    replaceFragment(MapFragment())
                     true
                 }
                 R.id.navigation_chat -> {

@@ -1,5 +1,6 @@
 package com.example.burgerapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -30,6 +31,7 @@ class BurgerDetailActivity : AppCompatActivity() {
     lateinit var productImage: ImageView
     lateinit var addToCartButton: CardView
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
