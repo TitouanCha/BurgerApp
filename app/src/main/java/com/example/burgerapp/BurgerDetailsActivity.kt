@@ -11,6 +11,11 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.button.MaterialButton
 
 class BurgerDetailActivity : AppCompatActivity() {
+    lateinit var foodDescription: String
+    lateinit var foodName: String
+    lateinit var foodPrice: String
+
+
     lateinit var backButton: MaterialButton
     lateinit var userLocationButton: MaterialButton
 
@@ -26,8 +31,14 @@ class BurgerDetailActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_burger_details)
 
+        getIntentData()
+
         linkViews()
         setupClickListeners()
+
+        productDescription.text = this.foodDescription
+        productTitleTv.text = this.foodName
+        productPrice.text = this.foodPrice
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -61,5 +72,12 @@ class BurgerDetailActivity : AppCompatActivity() {
         addToCartButton.setOnClickListener {
             // Handle add to cart button click
         }
+    }
+
+    private fun getIntentData() {
+        foodDescription = intent.getStringExtra("burgerDescription") ?: ""
+        foodName = intent.getStringExtra("burgerName") ?: ""
+        foodPrice = intent.getStringExtra("burgerPrice") ?: ""
+
     }
 }

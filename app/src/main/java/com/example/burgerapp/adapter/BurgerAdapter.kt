@@ -1,19 +1,18 @@
 package com.example.burgerapp.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.burgerapp.BurgerDetailActivity
 import com.example.burgerapp.R
 import android.widget.ImageView
-import androidx.core.content.ContextCompat
 import com.example.burgerapp.Data.FoodsModel
-import kotlin.coroutines.coroutineContext
 
-class BurgerAdapter(val burgersData: FoodsModel): RecyclerView.Adapter<BurgerViewHolder>() {
+class BurgerAdapter(
+    val burgersData: FoodsModel,
+    val onItemClicked: (Int) -> Unit
+): RecyclerView.Adapter<BurgerViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BurgerViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.burger_view_holder, parent, false)
         return BurgerViewHolder(view)
@@ -42,6 +41,9 @@ class BurgerAdapter(val burgersData: FoodsModel): RecyclerView.Adapter<BurgerVie
         }else{
             holder.burgerIsFavorite.setImageResource(R.drawable.baseline_favorite_border_24)
         }
+        holder.itemView.setOnClickListener {
+            onItemClicked(position)
+        }
     }
 
 
@@ -52,7 +54,6 @@ class BurgerAdapter(val burgersData: FoodsModel): RecyclerView.Adapter<BurgerVie
 }
 
 class BurgerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-    val burgerCard: View = itemView.findViewById<View>(R.id.burger_info_card_view)
     val burgerTextView: TextView = itemView.findViewById<TextView>(R.id.burger_name_tv)
     val burgerRatingReviews: TextView = itemView.findViewById<TextView>(R.id.review_and_rating_tv)
     val burgerPriceTextView: TextView = itemView.findViewById<TextView>(R.id.food_price_tv)

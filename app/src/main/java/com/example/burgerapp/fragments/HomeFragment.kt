@@ -1,5 +1,6 @@
 package com.example.burgerapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,11 +10,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.burgerapp.R
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.burgerapp.adapter.BurgerAdapter
-import com.example.burgerapp.adapter.CategoriesAdapter
 import com.example.burgerapp.Data.FoodsModel
 import com.example.burgerapp.FoodServices
 import com.example.burgerapp.Retrocfitclient
+import com.example.burgerapp.adapter.BurgerAdapter
+import com.example.burgerapp.adapter.CategoriesAdapter
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.analytics.logEvent
@@ -92,7 +93,14 @@ class HomeFragment : Fragment() {
         this.mainActivityBurgerRecyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        this.mainActivityBurgerRecyclerView.adapter = BurgerAdapter(burgersData)
+        this.mainActivityBurgerRecyclerView.adapter = BurgerAdapter(burgersData) { itemPosition ->
+            Intent(context, com.example.burgerapp.BurgerDetailActivity::class.java).apply {
+                putExtra("burgerDescription", burgersData[itemPosition].description)
+                putExtra("burgerName", burgersData[itemPosition].title)
+                putExtra("burgerPrice", burgersData[itemPosition].price)
+
+            }.also { startActivity(it) }
+        }
 
     }
 
