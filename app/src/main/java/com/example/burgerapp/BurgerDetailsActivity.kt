@@ -8,12 +8,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.burgerapp.Data.Review
 import com.google.android.material.button.MaterialButton
 
 class BurgerDetailActivity : AppCompatActivity() {
+    lateinit var foodId : String
+    lateinit var foodReview: List<Review>
     lateinit var foodDescription: String
     lateinit var foodName: String
     lateinit var foodPrice: String
+    lateinit var foodImage: String
 
 
     lateinit var backButton: MaterialButton
@@ -23,7 +27,7 @@ class BurgerDetailActivity : AppCompatActivity() {
     lateinit var productReview: TextView
     lateinit var productPrice: TextView
     lateinit var productDescription: TextView
-    lateinit var productImage: ImageView // Assuming this is a placeholder for an ImageView
+    lateinit var productImage: ImageView
     lateinit var addToCartButton: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,13 +36,13 @@ class BurgerDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_burger_details)
 
         getIntentData()
-
         linkViews()
         setupClickListeners()
 
         productDescription.text = this.foodDescription
         productTitleTv.text = this.foodName
-        productPrice.text = this.foodPrice
+        productPrice.text = "${this.foodPrice} €"
+        productReview.text = "2/5"
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -55,8 +59,7 @@ class BurgerDetailActivity : AppCompatActivity() {
         productReview = findViewById(R.id.product_rating_tv)
         productPrice = findViewById(R.id.product_price_tv)
         productDescription = findViewById(R.id.product_description_tv)
-        productImage =
-            findViewById(R.id.product_image_iv) // Assuming this is a placeholder for an ImageView
+        productImage = findViewById(R.id.product_image_iv)
         addToCartButton = findViewById(R.id.add_to_cart_button)
     }
 
@@ -75,9 +78,12 @@ class BurgerDetailActivity : AppCompatActivity() {
     }
 
     private fun getIntentData() {
+        foodId = intent.getStringExtra("burgerId") ?: ""
         foodDescription = intent.getStringExtra("burgerDescription") ?: ""
         foodName = intent.getStringExtra("burgerName") ?: ""
         foodPrice = intent.getStringExtra("burgerPrice") ?: ""
+        foodImage = intent.getStringExtra("burgerImage") ?: ""
+
 
     }
 }

@@ -97,7 +97,10 @@ class HomeFragment : Fragment() {
             Intent(context, com.example.burgerapp.BurgerDetailActivity::class.java).apply {
                 putExtra("burgerDescription", burgersData[itemPosition].description)
                 putExtra("burgerName", burgersData[itemPosition].title)
-                putExtra("burgerPrice", burgersData[itemPosition].price)
+                putExtra("burgerPrice", burgersData[itemPosition].price.toString())
+                putExtra("burgerImage", burgersData[itemPosition].imageUrl)
+                putExtra("burgerId", burgersData[itemPosition].id)
+                //putExtra("burgerReviews", burgersData[itemPosition].reviews)
 
             }.also { startActivity(it) }
         }
